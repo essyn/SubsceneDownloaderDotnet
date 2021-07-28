@@ -14,7 +14,7 @@ namespace fds
     {
         static async Task Main(string[] args)
         {
-            var exists = File.Exists("link.txt");
+            var exists = File.Exists("links.txt");
 
             if (!exists)
             {
@@ -30,12 +30,15 @@ namespace fds
                     try
                     {
                         GetItem(item);
+                        
                     }
                     catch (Exception ex)
                     {
-
+                        Console.WriteLine(ex);
                     }
                 }
+                Console.WriteLine("Completed");
+                Console.ReadKey();
             }
 
             //GetItem();
@@ -48,7 +51,7 @@ namespace fds
                 var n = GetLink(aa);
                 var m = GetName(aa).Trim().Replace(" ", "_");
                 DownloadItem(n, m);
-                Console.WriteLine(n + "downloaded");
+                Console.WriteLine(n + " downloaded");
             }
             catch (Exception ex)
             {
