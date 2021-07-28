@@ -14,7 +14,7 @@ namespace fds
     {
         static async Task Main(string[] args)
         {
-            var exists = File.Exists("links.txt");
+            var exists = File.Exists("link.txt");
 
             if (!exists)
             {
